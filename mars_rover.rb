@@ -20,8 +20,6 @@ class Rover
     when "E" then @x += 1
     when "W" then @x -= 1
     end
-
-
   end
 
   def turn(direction)
