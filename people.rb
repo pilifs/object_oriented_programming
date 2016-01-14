@@ -12,14 +12,14 @@ end
 
 class Student < Person
   def learn
-    "I get it"
+    puts "I get it"
   end
 end
 
 class Instructor < Person
 
   def teach
-    "Everything in Ruby is an Object"
+    puts "Everything in Ruby is an Object"
   end
 end
 
@@ -28,3 +28,7 @@ cristina = Student.new("Cristina")
 
 chris.greeting
 cristina.greeting
+
+chris.teach
+# cristina.teach
+# This method does not work because a Student object has no access to the teach method defined in Instructor, since Instructor is not a parent class of student. It would work if the method were in people.
