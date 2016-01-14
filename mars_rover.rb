@@ -8,7 +8,7 @@ class Rover
 
 
   def read_instructions(instruction)
-
+    instruction_set = instruction.split("")
   end
 
   def move
