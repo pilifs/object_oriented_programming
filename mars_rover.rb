@@ -9,6 +9,7 @@ class Rover
 
   def read_instructions(instruction)
     instruction_set = instruction.split("")
+    instruction_set.each {|x| x == "M" ? move : turn(x)}
   end
 
   def move
