@@ -10,8 +10,7 @@ class Good
   end
 
   def calculate_price
-    @exempt ? (@price) : (@price *= @@tax)
-    puts "$#{sprintf('%.2f', @price)}"
+    return @exempt ? (@price) : (@price *= @@tax)
   end
 
 end
@@ -23,10 +22,7 @@ class ImportGood < Good
   end
 
   def calculate_price
-    regular_price = super
-    regular_price += (@price * 0.05)
-    puts regular_price
-    #puts "$#{sprintf('%.2f', regular_price)}"
+    return super + (@price * 0.05)
   end
 end
 
@@ -35,10 +31,10 @@ def testmethod
   good2 = Good.new(8, "Perfume")
   good3 = ImportGood.new(8, "Book")
   good4 = ImportGood.new(8, "Perfume")
-  good1.calculate_price
-  good2.calculate_price
-  good3.calculate_price
-  good4.calculate_price
+  puts good1.calculate_price
+  puts good2.calculate_price
+  puts good3.calculate_price
+  puts good4.calculate_price
 end
 
 testmethod
